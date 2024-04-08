@@ -1,0 +1,5 @@
+client/client
+dist-newstyle/
+*/*.o
+*/*.hi
+node_modules
