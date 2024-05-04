@@ -1,0 +1,906 @@
+
+.B1 {
+    background-color: rgb(222, 255, 34);
+    border: 2px solid black;
+    color: rgb(38, 99, 231);
+    padding: 8px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px 30px;
+    cursor: pointer;
+    text-decoration:none;
+    transition-duration: 0.4s;
+    border-radius: 15px;
+}
+
+.B2 {
+    background-color: #12eb86;
+    border: 2px solid black;
+    color: rgb(238, 20, 20);
+    padding: 20px 40px;
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    margin: 10px 20px;
+    cursor: pointer;
+    text-decoration:none;
+    transition-duration: 0.3s;
+    border-radius: 20px;
+}
+
+
+.button1:hover{
+    background-color: #f44336;
+    color: white;
+}
+
+.button2:hover{
+    background-color: #1aebe0;
+    color: white;
+}
+
+.button3:hover{
+    background-color: #c81aeb;
+    color: rgb(98, 31, 231);
+}
+
+.login{
+    color: rgb(15, 15, 17);
+    border: 6px solid rgb(9, 3, 34);
+    background-color: rgba(174, 166, 235, 0.911);
+    border-radius: 20px;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+    font-size: 40px;
+    padding: 10px;
+    margin: 40px auto;
+    width: 800px;
+}
+
+.signup{
+    color: rgb(8, 8, 8);
+    border: 6px solid rgb(243, 243, 243);
+    background-color: rgba(144, 253, 111, 0.842);
+    border-radius: 20px;
+    text-align: center;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    padding: 10px;
+    margin: 20px 300px 20px 300px ;
+    width: auto;
+}
+
+.help{
+    color: blueviolet;
+    font-style: italic;
+    font-weight: 50;
+    padding: 0px;
+}
+
+.field{
+    font-weight: 100;
+    font-size: 30px;
+    color: black;
+}
+
+.dashbox {
+  
+  text-align: center;
+}
+
+.f1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    font-weight: 100;
+    color: rgb(0, 0, 0);
+}
+
+.f2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: 100;
+    color: blue;
+}
+
+.user {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: 30;
+    color: black;
+}
+
+.it {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: 15;
+    color: black;
+    font-style: italic;
+}
+
+.box{
+    border-style: none;
+    border-width: 0.5mm;
+    background-color: yellow;
+    border-left: 6px solid red;
+}
+
+.main {
+    background-color: #262626;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button4 {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    border-radius: 18px;
+    background-color: #ffa41c;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+  }
+.button4:hover {
+    background-color: rgb(197, 27, 240);
+    border-color: rgb(19, 17, 17);
+    transition: all .1s ease-in-out;
+}
+
+.button5 {
+    position: relative;
+    display: inline-block;
+    width: 400px;
+    height: 50px;
+    border-radius: 18px;
+    background-color: #1cffa0;
+    border: solid 1px transparent;
+    color: rgb(15, 15, 14);
+    font-size: 20px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    margin: 15px 25px 15px 25px ;
+  }
+.button5:hover {
+    background-color: rgb(27, 162, 240);
+    border-color: rgb(19, 17, 17);
+    transition: all .1s ease-in-out;
+}
+
+.button6 {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+    border-radius: 18px;
+    background-color: #273beb;
+    border: solid 1px transparent;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    margin: 10px;
+  }
+.button6:hover {
+    background-color: rgb(197, 27, 240);
+    border-color: rgb(19, 17, 17);
+    transition: all .1s ease-in-out;
+}
+
+.dis{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    font-weight: 25;
+    color: black;
+    font-style: italic;
+}
+
+.assignment{
+    color: rgb(8, 8, 8);
+    border: 6px solid rgb(29, 241, 248);
+    background-color: rgba(144, 253, 111, 0.842);
+    border-radius: 30px;
+    text-align: center;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    padding: 10px;
+    margin: 20px 200px 20px 200px ;
+    width: auto;
+}
+
+
+.feed{
+    color: rgb(8, 8, 8);
+    border: 6px solid rgb(29, 241, 248);
+    background-color: rgb(200, 148, 250);
+    border-radius: 30px;
+    text-align: center;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 50;
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px ;
+    width: auto;
+    font-style: italic;
+}
+
+
+.profile {
+    background-color: #e358ff;
+    margin: 10px 300px 10px 300px;
+    padding: 15px;
+    border-radius: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    color: rgb(0, 0, 0);
+}
+
+
+/*--------------------------------------------------*/
+/*
+=
+=
+=
+=
+=
+=
+=
+=
+=
+=
+=---------------------------------------------------*/
+
+
+/* ---header------- AND TOP HYPER REFERENCES.*/
+
+
+
+
+body{
+    margin: 0px;
+    background-color: #f7ebdd;
+}
+
+.head{
+    background-color: #0E0B16;
+    color: rgb(49, 113, 233);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: 50;
+    padding-top: 10px;
+    padding-left: auto;
+    padding-right: auto;
+    padding-bottom: 10px;
+    display: inline-flexbox;
+}
+
+.Conth{
+    border-style: solid ;
+    border-width: 0px ;
+    background-color: #0b160c;
+    color: rgb(49, 113, 233);
+
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: 50;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 0px;
+}
+
+.contL{
+    background-color: #04182c;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.contP{
+    background-color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hov1{
+    color: rgb(222, 255, 34);
+}
+
+.hov1:hover{
+    background-color: #49f044;
+    color:rgb(243, 243, 243)
+}
+
+.hov1:active{
+    background-color: rgb(222, 255, 34);
+}
+
+
+.hov2:hover{
+    background-color: #488bf0;
+    color:rgb(7, 7, 7)
+}
+
+.hov3{
+    color: #e358ff;
+}
+
+.hov3:hover{
+    background-color: #f44336;
+    color:rgb(243, 243, 243)
+}
+
+.hov3:active{
+    background-color: #e358ff;
+}
+
+.hov4{
+    color: rgb(255, 170, 51);
+}
+
+.hov4:hover{
+    background-color:  rgb(222, 255, 34);
+    color: rgb(0, 0, 0);
+}
+
+
+.hov4:active{
+    background-color: rgb(255, 170, 51);
+}
+
+.hov8:hover{
+    background-color: #1aebe0;
+}
+
+.hov8:active{
+    background-color: #e62bec;
+}
+
+.name1{
+    background-color: #f0b22c;
+    color:#f3f1f0;
+}
+
+.name1:hover{
+    background-color: #488bf0;
+    color: #0E0B16;
+}
+
+ /*------------------ TODO list----------------------------*/
+ 
+.Cbox{
+    border-style: solid ;
+    border-width: 0px ;
+    border-color: black;
+}
+
+.Cbox1{
+    background-color:#0E0B16 ;
+}
+
+.Cbox1:hover{
+    background-color: rgb(243, 239, 31);
+}
+
+.Cbox2:hover{
+    background-color: rgb(58, 111, 211);
+    color: #0E0B16;
+}
+
+
+.Cbox3:hover{
+    background-color: rgb(248, 61, 61);
+}
+
+.Cbox4:hover{
+    background-color: aquamarine;
+}
+
+.Cbox5:hover{
+    background-color:rgb(105, 31, 243);
+}
+
+.Cbox6:hover{
+    background-color: rgb(248, 61, 61);
+}
+
+.Cbox7:hover{
+    background-color: #49f044;
+}
+
+.Cbox7:hover>.triangle-up-small{
+    border-color: #49f044;
+}
+
+/*----------------COURE ICONS---------------------*/
+
+
+
+.course{
+    border: 0px solid rgb(0, 0, 0);
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
+    /* box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px; */
+
+    margin: 20px ;
+    border-radius: 10px;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+    background-color: #f3f1f0
+
+}
+
+.triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 50px solid rgb(96, 235, 78);
+}
+
+.Cbox1:hover>.triangle-up-small{
+    border-bottom-color:#49f044;
+}
+
+.triangle-up-small {
+	width: 0;
+	height: 0;
+	border-left: 14px solid transparent;
+	border-right: 14px solid transparent;
+	border-bottom: 28px solid #0E0B16;
+}
+
+.square {
+    height: 40px;
+    width: 40px;
+    /* background-color: #555; */
+    border: 8px solid rgb(243, 239, 31);
+}
+
+.circle {
+height: 40px;
+width: 40px;
+/* background-color: #555; */
+border: 8px solid rgb(248, 61, 61);
+border-radius: 50%;
+}
+
+
+.sideheadfont{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin: 0px;
+    border: 0px;
+
+    border-style: solid;
+
+    background-color: #566ef5;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(119, 77, 77, 0.19);
+
+}   
+
+.font1{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.hov5:hover{
+    background-color: rgb(255, 170, 51);
+    color: #0E0B16;
+}
+
+.hov6{
+    background-color: #0b160c;
+    color: rgb(181, 12, 248);
+}
+
+.hov6:hover{
+    background-color: rgb(238, 20, 20);
+    color: #0E0B16;
+}
+
+
+.hov7{
+    background-color: #0b160c;
+    color: rgb(222, 255, 34);
+}
+
+.hov7:hover{
+    background-color: #49f044;
+    color: #0E0B16;
+}
+
+
+.sidebox{
+    width: 100%;
+    border: 0px solid ;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background-color: #43f151; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(119, 77, 77,0.19);
+    background-color: #15031a;
+
+}
+
+.sidebox:hover{
+    background-color: rgb(68, 66, 63);
+}
+
+.sidebox:hover> .font2{
+    color: rgb(0, 132, 255);
+}
+
+.font2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    margin: 0px;
+    border: 0px;
+
+    /* color: #0E0B16; */
+    color: rgb(222, 255, 34);
+}
+
+.font3{
+    margin: 1px; 
+    color: rgb(67, 70, 75);
+}
+
+.font4{
+    margin: 1px; 
+    color: rgb(233, 33, 33);
+}
+
+.font5{
+    color: #c81aeb;
+}
+
+.font6{
+    color: rgb(67, 70, 75);
+}
+
+.font7{
+    color:rgb(96, 235, 78);
+}
+
+.font8{
+    color: rgb(255, 170, 51);
+}
+
+.font9{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hov9:hover{
+    color: #0b160c;
+    background-color: rgb(222, 255, 34);
+}
+
+.hov9{
+    background-color: #49f044;
+    color: #0E0B16;
+    border: 0px solid #0E0B16;
+}
+
+
+.hov5{
+    color: #15031a;
+    background-color: #566ef5;
+}
+
+.hov10{
+    background-color: rgb(255, 170, 51);
+    color: #15031a;
+}
+
+.hov10:hover{
+    background-color: rgb(222, 255, 34);
+}
+
+.hov11:hover{
+    color: #0b160c;
+    background-color: rgb(74, 237, 243);
+}
+
+.hov11{
+    background-color: #a91fe0;
+    color: #0E0B16;
+}
+
+
+.hov12{
+    background-color: #f44336;
+}
+
+
+
+
+/*--------------------chat--forums*---------------------*/
+
+.button7 {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    border-radius: 18px;
+    background-color: rgb(65, 240, 202);
+    border: solid 0px transparent;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    padding-top: 8px;
+
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+.button7:hover {
+    background-color: #ecf011;
+    border-color: rgb(19, 17, 17);
+    transition: all .1s ease-in-out;
+    color: #0E0B16;
+}
+
+
+
+
+.msg{
+    color: rgb(255, 255, 255);
+    text-align: left;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 50;
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px ;
+    width: auto;
+    font-style: normal;
+
+}
+
+.hov13{
+    background-color:#0E0B16;
+    color: #12eb86;
+}
+
+.hov13:hover{
+    background-color: rgb(24, 177, 248);
+    color: #0E0B16;
+}
+
+.hov13:hover>.msg{
+    color: #0E0B16;
+    font-size: 30px;
+}
+
+.hov14{
+    background-color: transparent;
+    color: #eea509;
+}
+
+.hov14:hover{
+    background-color: #15031a;
+    color: #eea509;
+}
+
+.hov13:hover>.hov14{
+    color: rgb(243, 243, 243);
+}
+
+
+
+
+.hov15{
+    background-color:#0E0B16;
+    color: #12eb86;
+}
+
+.hov15:hover{
+    background-color: rgb(236, 52, 52);
+    color: #0E0B16;
+}
+
+.hov15:hover>.msg{
+    color: #0E0B16;
+    font-size: 30px;
+}
+
+.hov16{
+    background-color: transparent;
+    color: rgb(222, 255, 34);
+}
+
+.hov16:hover{
+    background-color: #15031a;
+    color:rgb(222, 255, 34);
+}
+
+.hov15:hover>.hov16{
+    color: rgb(243, 243, 243);
+}
+
+.msg2{
+    text-align: center;
+}
+
+
+
+
+.hov17{
+    background-color:#0E0B16;
+    color: #12eb86;
+}
+
+.hov17:hover{
+    background-color: rgb(44, 241, 26);
+    color: #0E0B16;
+}
+
+.hov17:hover>.msg{
+    color: #0E0B16;
+    font-size: 30px;
+}
+
+.hov18{
+    background-color: transparent;
+    color: rgb(222, 255, 34);
+}
+
+.hov18:hover{
+    background-color: #15031a;
+    color:rgb(222, 255, 34);
+}
+
+.hov17:hover>.hov18{
+    color: rgb(243, 243, 243);
+}
+
+
+/*-----disbale enable------*/
+
+.hov20{
+    background-color: red;
+    color: #0E0B16;
+}
+
+.hov20:hover{
+    background-color: #def322;
+    color: #fc3939;
+}
+
+.hov20:active{
+    background-color: red;
+    color: #0E0B16;
+}
+
+
+.hov20{
+    background-color: red;
+    color: #0E0B16;
+}
+
+.hov20:hover{
+    background-color: #def322;
+    color: #fc3939;
+}
+
+.hov20:active{
+    background-color: red;
+    color: #0E0B16;
+}
+
+
+.hov21{
+    background-color: rgb(44, 241, 26);
+    color: #0E0B16;
+}
+
+.hov21:hover{
+    background-color: #def322;
+    color: #000000;
+}
+
+.hov21:active{
+    background-color: rgb(51, 255, 0);
+    color: #0E0B16;
+}
+
+
+
+.assignment2{
+    color: rgb(0, 119, 255);
+    border: 0px solid rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.822);
+    border-radius: 35px;
+    text-align: center;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    padding: 15px;
+    margin: 20px 15% 20px 15% ;
+    width: 70%;
+
+
+
+    
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 
+}
+
+
+.button9 {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    border-radius: 18px;
+    background-color: #d9ee1c;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+  }
+.button9:hover {
+    background-color: rgb(197, 27, 240);
+    border-color: rgb(19, 17, 17);
+    transition: all .1s ease-in-out;
+}
+
+
+.button10 {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    border-radius: 18px;
+    background-color: rgb(212, 45, 59);
+    border: solid 0px transparent;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    padding-top: 8px;
+
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+.button10:hover {
+    background-color: #8411f0;
+    border-color: rgb(19, 17, 17);
+    transition: all .1s ease-in-out;
+    color: #0E0B16;
+}
+
+
+
+.textareaform{
+    font-size: 30px;
+    width: 500px;
+    height: 50px;
+}

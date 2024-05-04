@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block title %}Chats{% endblock %}
+
+{% block H %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Center align the form */
+  .center-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+</style>
+
+<script>
+  setInterval(function() {
+     location.reload();
+   }, 10000); // 1000 milliseconds = 1 second
+
+   window.onbeforeunload = function(){
+    // save the typed data in form
+    localStorage.setItem("user", document.getElementById("user").value);
+   }
+
+   window.onload = function(){
+    // restore the typed data in form
+    document.getElementById("user").value = localStorage.getItem("user");
+   }
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div class="Conth" style="height: 80px; width: 60%; align-self: center; margin: 20px 20%;  border-radius: 30px;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+    <a href="{% url 'home' %}" class="Conth hov3 ContL" style="width: 35%; height: 100%; display: block; text-decoration: none;">
+      <h2 style="margin-left: 0%; margin-top: 8%;">Home</h2>
+    </a>
+
+    <a href="{% url 'search' %}" class="Conth hov4 ContL" style="width: 30%; height: 100%; display: block; text-decoration: none; ">
+        <h2 style="margin-left: 0%; margin-top: 8%;">Search</h2>
+      </a>
+
+    <a href="{% url 'playhome' %}" class="Conth hov1 ContL" style="width: 35%; height: 100%; display: block; text-decoration: none; ">
+      <h2 style="margin-left: 0%; margin-top: 8%;">Play</h2>
+    </a>
+
+</div>
+
+
+<div class="Cbox" style="height: fit-content; width: 100%; border-width: 5px 0px; display: flex; background-color: rgb(220, 234, 247);">
+  
+  <div class="Cbox" style="width: 80%; height: auto; ">
+    
+    <div class="container">
+      <div class="row center-form">
+    
+        <!-- WELCOME MESSAGE -->
+        <div class="col-md-6">
+          <h1>Welcome to Chat Lambda</h1>
+          <p>Enter the username to connect!</p>
+        </div>
+    
+        <div class="col-md-6">
+          <form id="configForm", action="{% url 'chathome' %}", method="post", enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="user" class="form-label">User ID</label>
+              <input type="text" class="form-control input-lg" id="user" name="user" placeholder="Enter the user id">
+            </div>
+            <button type="submit" class="btn btn-primary">Connect</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="Cbox" style="width: 20%; height: auto; border-left-width: 5px ; background-color: rgb(221, 203, 180);">
+
+    <div class="sideheadfont hov5" style="color: rgb(43, 7, 14); font-size:x-large; padding: 10px; border-width: 0px 5px 5px 5px;">
+        <h1 style="margin: 0px;">Requests</h1>
+    </div>
+
+    <div class="sideheadfont font1 hov6">
+        <h1>Chat</h1>
+    </div>
+
+    {% for usr in users_chat %}
+    <a href = "{% url 'chat' usr %}" class="sidebox" style="height: auto; width: auto; text-align: center; padding: 2px; margin-bottom: 5px; text-decoration: none;display: block;">
+        <h1 class="font7">{{ usr }}</h1>
+    </a>
+    {% endfor %}
+
+    <div class="sideheadfont font1 hov6">
+        <h1>Game</h1>
+    </div>
+
+    {% for usr in users_play %}
+    <a href = "{% url 'play' usr %}" class="sidebox" style="height: auto; width: auto; text-align: center; padding: 2px; margin-bottom: 5px; text-decoration: none;display: block;">
+        <h1 class="font7">{{ usr }}</h1>
+    </a>
+    {% endfor %}
+
+</div>
+
+</div>
+
+
+{% endblock %}
+
+
+
+
+<!-- <form method="post">
+  {% csrf_token %}
+
+{% for field in form %}
+  <div style="text-align: center; margin: 20px 5% 5px;">
+  {{field}}
+  </div>
+{% endfor %}
+
+<div style="text-align: center; margin: 0px;">
+  <button type="submit" class="B1 button4" style="text-align: center;">Create New forum</button>
+</div> -->

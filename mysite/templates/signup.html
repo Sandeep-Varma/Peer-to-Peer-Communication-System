@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Signup{% endblock %}
+
+{% block content %}
+<div class = "signup"  >
+	<h1 style="color: rgb(241, 44, 44);">SIGN UP!</h1>
+	{% if not success %}
+	<h3 style = "color: red; font-weight: 50; text-decoration: rgb(93, 60, 236);" >Invalid Credentials.Please Enter valid credentials!</h3>
+	{% endif %}	
+<form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+		<div class="fieldWrapper">
+		{{ field.errors }}
+		<p class = "field">{{ field.label_tag }}     {{field}}</p>
+		{% if field.help_text %}
+			<div class = "help">{{ field.help_text|safe }} </div>
+		{% endif %}
+		</div>
+	{% endfor %}
+    <button type="submit" class="B1 button2">SignUp</button>
+</form>
+</div>
+
+{% endblock %}

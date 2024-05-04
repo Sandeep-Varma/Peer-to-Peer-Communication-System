@@ -1,0 +1,376 @@
+{% extends 'base.html' %}
+
+{% block title %}Chats{% endblock %}
+
+{% block H %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Center align the form */
+  .center-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+</style>
+
+<script>
+  // setInterval(function() {
+  //    location.reload();
+  //  }, 10000); // 1000 milliseconds = 1 second
+
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div class="Conth"
+  style="height: 80px; width: 60%; align-self: center; margin: 20px 20%;  border-radius: 30px;     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+  <a href="{% url 'home' %}" class="Conth hov3 ContL"
+    style="width: 35%; height: 100%; display: block; text-decoration: none;">
+    <h2 style="margin-left: 0%; margin-top: 8%;">Home</h2>
+  </a>
+
+  <a href="{% url 'search' %}" class="Conth hov4 ContL"
+    style="width: 30%; height: 100%; display: block; text-decoration: none; ">
+    <h2 style="margin-left: 0%; margin-top: 8%;">Search</h2>
+  </a>
+
+  <a href="{% url 'chathome' %}" class="Conth hov1 ContL"
+    style="width: 35%; height: 100%; display: block; text-decoration: none; ">
+    <h2 style="margin-left: 0%; margin-top: 8%;">Chat</h2>
+  </a>
+
+</div>
+
+
+<div class="Cbox"
+  style="height: fit-content; width: 100%; border-width: 5px 0px; display: flex; background-color: rgb(220, 234, 247);">
+
+  <div class="Cbox" style="width: 80%; height: auto; ">
+
+
+    <div class="container mt-5" style="background-color: rgb(255, 255, 255);">
+
+
+      {% if stop == 1 %}
+        <div style="text-align: center; color: darkblue;">
+          <h2>Game Finished!</h2>
+        </div>
+
+        {% if game1.guesser == 0 %}
+            <div class="f1" style="text-align: center; width: 100%;"><h2><div style="display: inline; color: rgb(131, 115, 115);">Your score:</div>  {{ score1 }}  </h2></div>
+            <div class="f1" style="text-align: center; width: 100%;"><h2><div style="display: inline; color: rgb(131, 115, 115);">Opponent score:</div>  {{ score2 }}  </h2></div>
+        {% else %}
+            <div class="f1" style="text-align: center; width: 100%;"><h2><div style="display: inline; color: rgb(131, 115, 115);">Your score:</div>  {{ score2 }}  </h2></div>
+            <div class="f1" style="text-align: center; width: 100%;"><h2><div style="display: inline; color: rgb(131, 115, 115);">Opponent score:</div>  {{ score1 }}  </h2></div>
+        {% endif %}
+
+        <!-- press here to restart, post to the url restart -->
+        <div class="f1" style="text-align: center; width: 100%;"><h2><a href="{% url 'restart' user2 %}">Press here to restart</a></h2></div>
+        
+
+      {% endif %}
+
+
+
+      {% if  round == 1 %}
+
+        <br>
+        <div style="text-align: center; color: darkblue;">
+          <h2>Round 2</h2>
+        </div>
+        <br>
+
+        {% if game2.key == "" %}
+          {% if  game2.guesser == 1 %}
+            <div style="text-align: center; color: rgb(234, 42, 12);">
+              <h2>Key not selected yet</h2>
+            </div>
+          {% else %}
+            <div style="text-align: center; color: rgb(234, 42, 12);">
+              <h2>Please select the key</h2>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <form method="POST">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <label for="key">Key</label>
+                    <input type="text" class="form-control" id="key" name="key" placeholder="Enter the key">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          {% endif %}
+        {% else %}
+          <div class="row">
+            <div class="col-12">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>S/N</th>
+                    <th>Guess</th>
+                    <th>Valid</th>
+                    <th>Bulls</th>
+                    <th>Cows</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% if game2.guesser == 0 %}
+                  <tr>
+                    <th style="color: brown;">Keyword</th>
+                    <th style="color: brown;">{{ game2.key }}</th>
+                  </tr>
+                  {% endif %}
+
+                  {% for guess in game2.guesses %}
+                  <tr>
+                    {% if guess.bulls == 3 %}
+                      <th style="color: chartreuse;">{{ guess.SN }}</th>
+                      <th style="color: chartreuse;">{{ guess.guess }}</th>
+                      <th style="color: chartreuse;">{{ guess.valid}}</th>
+                      <th style="color: chartreuse;">{{ guess.bulls}}</th>
+                      <th style="color: chartreuse;">{{ guess.cows}}</th>
+                    {% elif guess.valid == 0 %}
+                      <th style="color: crimson;">{{ guess.SN }}</th>
+                      <th style="color: crimson;">{{ guess.guess }}</th>
+                      <th style="color: crimson;">{{ guess.valid}}</th>
+                      <th></th>
+                      <th></th>
+                    {% else %}
+                      <th>{{ guess.SN }}</th>
+                      <th>{{ guess.guess }}</th>
+                      <th>{{ guess.valid}}</th>
+                      <th>{{ guess.bulls}}</th>
+                      <th>{{ guess.cows}}</th>
+                    {% endif %}
+                  </tr>
+                  {% endfor %}
+                  {% if stop == 1 %}
+                    <tr>
+                      <th style="color: rgb(15, 118, 182);">Round finished!</th>
+                    </tr>
+                  {% endif %}
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+
+          {% if stop == 0 and game2.guesser == 1 %}
+          <div class="row">
+            <div class="col-12">
+              <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="guess">Guess</label>
+                  <input type="text" class="form-control" id="guess" name="guess" placeholder="Enter your guess">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+          {% endif %}
+
+        {% endif %}
+
+      {% endif %}
+
+
+      <!--======================================================================-->
+
+      <br>
+      <div style="text-align: center; color: darkblue;">
+        <h2>Round 1</h2>
+      </div>
+      <br>
+
+      {% if game1.key == "" %}
+        {% if  game1.guesser == 1 %}
+          <div style="text-align: center; color: rgb(234, 42, 12);">
+            <h2>Key not selected yet</h2>
+          </div>
+        {% else %}
+          <div style="text-align: center; color: rgb(234, 42, 12);">
+            <h2>Please select the key</h2>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="key">Key</label>
+                  <input type="text" class="form-control" id="key" name="key" placeholder="Enter the key">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        {% endif %}
+      {% else %}
+        <div class="row">
+          <div class="col-12">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>S/N</th>
+                  <th>Guess</th>
+                  <th>Valid</th>
+                  <th>Bulls</th>
+                  <th>Cows</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% if game1.guesser == 0 %}
+                <tr>
+                  <th style="color: brown;">Keyword</th>
+                  <th style="color: brown;">{{ game1.key }}</th>
+                </tr>
+                {% endif %}
+
+                {% for guess in game1.guesses %}
+                <tr>
+                  {% if guess.bulls == 3 %}
+                    <th style="color: chartreuse;">{{ guess.SN }}</th>
+                    <th style="color: chartreuse;">{{ guess.guess }}</th>
+                    <th style="color: chartreuse;">{{ guess.valid}}</th>
+                    <th style="color: chartreuse;">{{ guess.bulls}}</th>
+                    <th style="color: chartreuse;">{{ guess.cows}}</th>
+                  {% elif guess.valid == 0 %}
+                    <th style="color: crimson;">{{ guess.SN }}</th>
+                    <th style="color: crimson;">{{ guess.guess }}</th>
+                    <th style="color: crimson;">{{ guess.valid}}</th>
+                    <th></th>
+                    <th></th>
+                  {% else %}
+                    <th>{{ guess.SN }}</th>
+                    <th>{{ guess.guess }}</th>
+                    <th>{{ guess.valid}}</th>
+                    <th>{{ guess.bulls}}</th>
+                    <th>{{ guess.cows}}</th>
+                  {% endif %}
+                </tr>
+                {% endfor %}
+                {% if round == 1 %}
+                  <tr>
+                    <th style="color: rgb(15, 118, 182);">Round finished!</th>
+                  </tr>
+                {% endif %}
+              </tbody>
+
+            </table>
+          </div>
+        </div>
+
+        {% if round == 0 and game1.guesser == 1 %}
+        <div class="row">
+          <div class="col-12">
+            <form method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="guess">Guess</label>
+                <input type="text" class="form-control" id="guess" name="guess" placeholder="Enter your guess">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+        {% endif %}
+
+      {% endif %}
+
+
+    </div>
+  </div>
+
+
+  <div class="Cbox" style="width: 20%; height: auto; border-left-width: 5px ; background-color: rgb(221, 203, 180);">
+
+    <div class="sideheadfont hov5"
+      style="color: rgb(43, 7, 14); font-size:x-large; padding: 10px; border-width: 0px 5px 5px 5px;">
+      <h1 style="margin: 0px;">Requests</h1>
+    </div>
+
+    <div class="sideheadfont font1 hov6">
+      <h1>Chat</h1>
+    </div>
+
+    {% for usr in users_chat %}
+    <a href="{% url 'chat' usr %}" class="sidebox"
+      style="height: auto; width: auto; text-align: center; padding: 2px; margin-bottom: 5px; text-decoration: none;display: block;">
+      <h1 class="font7">{{ usr }}</h1>
+    </a>
+    {% endfor %}
+
+    <div class="sideheadfont font1 hov6">
+      <h1>Game</h1>
+    </div>
+
+    {% for usr in users_play %}
+    <a href="{% url 'play' usr %}" class="sidebox"
+      style="height: auto; width: auto; text-align: center; padding: 2px; margin-bottom: 5px; text-decoration: none;display: block;">
+      <h1 class="font7">{{ usr }}</h1>
+    </a>
+    {% endfor %}
+
+  </div>
+
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+<!-- <html>
+
+<head>
+  <title>Tic Tac Toe</title>
+  <meta name="description" content="Multiplayer Tic Tac Toe Game">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+</head>
+
+<body class="center">
+  <h1>Tic Tac Toe Game</h2>
+    <div class="center" id="main">
+      <h4>--Play and Enjoy--</h4>
+      <button onclick="start()" class="button">Start a New Game</button>
+      <br>
+      <button onclick="learn()" class="button">Learn How to Play GAME?</button>
+      <br>
+      <button onclick="exit()" class="button">Exit</button>
+    </div>
+    <div class="center" id="learn">
+      <p>
+          You are X, your friend is O. 
+          <br>
+          The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.
+          When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
+      </p>
+      <img src="./image/learn.jpg" alt="Learn">
+      <br>
+      <button onclick="main()" class="button">Back</button>
+    </div>
+    <div class="center" id="game">
+      <div class="center" style="margin: 5px;">
+        <h3 id="textPlayer" style="font-size: 0.9rem;">(Current Player 1)</h2>
+          <h3 id="textComd" style="font-size: 0.9rem;">Player 2 can play now...</h2>
+      </div>
+      <canvas id="tic-tac-toe-board" class="center"></canvas>
+    </div>
+    <!-- Script OF Game -->
+<script src="{% static 'index.js' %}"></script>
+</body>
+
+</html> -->

@@ -1,5 +1,10 @@
-client/client
-dist-newstyle/
-*/*.o
-*/*.hi
-node_modules
+client/dist-newstyle
+*.o
+server/dist-newstyle
+6004
+tmp_bhuvan
+tmp_sandeep
+tmp_ab
+*.json
+TODO
+sample.txt

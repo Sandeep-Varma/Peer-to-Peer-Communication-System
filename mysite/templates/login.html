@@ -1,0 +1,48 @@
+
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+ 
+</head>
+<body>
+      <div class="Conth" style="height: 100px; padding: 0em;">
+
+        <a href="{% url 'signup' %}" class="Conth hov1" style="width: 30%; height: 100%; display: block; text-decoration: none; ">
+          <h3 style="margin-left: 0%; margin-top: 8%;">Signup</h3>
+        </a>
+
+        <div class="Conth hov2" style="width: 40%; height: 100%;">
+          <h1 style="margin-left: 35%;">Float Moodle</h1>
+        </div>
+
+        <a href="{% url 'login' %}" class="Conth hov3" style="width: 30%; height: 100%; display: block; text-decoration: none; ">
+          <h3 style="margin-left: 0%; margin-top: 8%;">login</h3>
+        </a>
+
+      </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="login">
+      <h1 style="color: rgb(4, 19, 8);font-family: Verdana, Geneva, Tahoma, sans-serif;">Login</h1>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="B1 button2">Log In</button>
+      </form>
+    </div>
+    
+
+</body>
+</html>
