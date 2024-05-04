@@ -1,0 +1,11 @@
+# Instructions to run the code
+    -   start the server by running the following steps.
+        -   `cd server`
+        -   `cabal build`
+        -   `cabal run`
+    -   build the client backend by running the following steps.
+        -   `cd client`
+        -   `cabal build`
+    -   start the client UI by running the following steps.
+        -   `cd mysite`
+        -   `python3 manage.py runserver 0.0.0.0:9876` (or any other port number)
